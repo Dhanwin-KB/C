@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-	int cid,units,tax;
+	int cid,units,tax,diff;
 	char name[25];
 	float price=100;
 	price=0;
@@ -39,6 +39,11 @@ int main()
 		tax=(15*price)/100;
 		price=price+tax;
 		printf("\nPrice after Surcharge of 15 percent:%.2f",price);	
+	}
+	if (price<100)
+	{
+		diff=100-price;
+		price=price+diff;
 	}
 	return 0;
 }
