@@ -1,34 +1,30 @@
-#include<stdio.h>
-#include<string.h>
-void permu(char *str,int m, int n)
+#include <stdio.h>
+void swap(char *a, char *b) 
 {
-    int i,j;
-    char tmp;
-    for(i = m;i<n-1;++i)
-    {
-        for(j=i+1;j<n;++j)
-        {
-            tmp = str[i];
-            str[i] = str[j];
-            str[j] = tmp;
-            permu(str,i+1,n);
-            tmp = str[i];
-            str[i] = str[j];
-            str[j] = tmp;
-        }
-    }
-    printf("%s\n",str);
+    char temp = *a;
+    *a = *b;
+    *b = temp;
 }
-int main()
+void permute(char *str, int l, int r) 
 {
-    int i,n;
-    char str[25];
-    printf("Enter a string:");
-    scanf("%s", str);
-    while (str[i] != '\0')
+    if (l == r) 
     {
-        n = n + 1;
-        i++;
+        printf("%s ", str);
+        return;
     }
-    permu(str,0,n);
+    for (int i = l; i <= r; i++) 
+    {
+        swap((str + l), (str + i));
+        permute(str, l + 1, r);
+        swap((str + l), (str + i)); 
+    }
+}
+int main() 
+{
+    char input[] = "abcd";
+    int length = sizeof(input) - 1; 
+    printf("The permutations of the string are: ");
+    permute(input, 0, length - 1);
+    printf("\n");
+    return 0;
 }
