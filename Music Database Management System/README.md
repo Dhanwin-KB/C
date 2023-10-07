@@ -1,2 +1,2 @@
-# c-project-1st-trisem
-This a repository for the 1st Trimester Project of Problem Solving Using C  course for the programme of Masters in Computer Application in Christ University ,Bangalore
+# First Trimester C Project : Music Database Management System
+The First Trimester Project of the Course : Problem Solving Using C for the programme of 'Masters in Computer Application' in Christ University , Bangalore
